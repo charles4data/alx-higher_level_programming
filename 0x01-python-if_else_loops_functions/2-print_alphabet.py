@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 
-print("".format("abcdefghijklmnopqrstuvwxyz"))
+for i in range(97, 123):
+    print("{:2}".format(chr(i)), end="")
