@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 
-print("abcdfghijklmnoprstuvwxyz")
+for i in range(97, 123):
+    if i is not 101 and i is not 113:
+        print("{:2d}".format(chr(i)))
