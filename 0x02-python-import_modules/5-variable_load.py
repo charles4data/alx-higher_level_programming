@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
-# import modules
-from variable_load_5 import a
+if __name__ == "__main__":
 
-# write function
-print(a)
+    # import modules
+    from variable_load_5 import a
+
+    # write function
+    print(a)
