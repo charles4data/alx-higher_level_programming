@@ -14,3 +14,6 @@ if __name__ == "__main__":
                 print("{}: {}".format(i, argv[i]), end="\n")
         else:
             print("No Arguments provided")
+
+    if __name__ == "__main__":
+        cmd_args(sys.argv[1:])
