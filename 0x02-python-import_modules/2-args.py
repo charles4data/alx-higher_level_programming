@@ -5,15 +5,12 @@ if __name__ == "__main__":
     import sys
 
     # define function
-    def cmd_args(argv):
-        num_args = len(argv)
+    arguments = sys.argv[1:]
+    argc = len(arguments)
 
-        if num_args > 0:
-            print("{} arguments".format(num_args))
-            for i in range(num_args):
-                print("{}: {}".format(i, argv[i]), end="\n")
-        else:
-            print("No Arguments provided")
-
-    if __name__ == "__main__":
-        cmd_args(sys.argv[1:])
+    if argc > 0:
+        print("{} arguments".format(argc))
+        for i in range(argc):
+            print("{}: {}".format(i, arguments[i]), end="\n")
+    else:
+        print("No Arguments provided")
