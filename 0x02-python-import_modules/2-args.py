@@ -8,9 +8,13 @@ if __name__ == "__main__":
     arguments = sys.argv[1:]
     argc = len(arguments)
 
-    if argc > 0:
-        print("{} arguments".format(argc))
+    if argc > 1:
+        print("{} arguments:".format(argc))
         for i in range(argc):
             print("{}: {}".format(i, arguments[i]), end="\n")
+    elif argc == 1:
+        print("{} argument:".format(argc))
+        for i in range(argc):
+            print("{}: {}".format(i, arguments[i]))
     else:
-        print("No Arguments provided")
+        print("0 arguments")
