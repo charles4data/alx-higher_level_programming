@@ -9,6 +9,5 @@ def replace_in_list(my_list, idx, element):
 
     # If the index is positive and in range
     else:
-        new_list = my_list.copy()
-        new_list[idx] = element
-        return new_list
+        my_list[idx] = element
+        return my_list
