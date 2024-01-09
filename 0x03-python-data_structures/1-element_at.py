@@ -7,4 +7,4 @@ def element_at(my_list, idx):
     else:
         for i in my_list:
             if i == idx:
-                print("{}".format(my_list[idx]))
+                return my_list[idx]
