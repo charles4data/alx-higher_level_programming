@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("#pythoniscool")
+text = "#pythoniscool"
+exec("print(text)")
