@@ -12,7 +12,8 @@ if __name__ == '__main__':
         if len(args) != 3:
             print("Usage: ./100-my_calculator.py <a> <operator> <b>")
             exit(1)
-        elif args[1] != '+' and args[1] != '-' and args[1] != '*' and args[1] != '/':
+        elif (args[1] != '+' and args[1] != '-'
+              and args[1] != '*' and args[1] != '/'):
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
         else:
@@ -28,6 +29,5 @@ if __name__ == '__main__':
                 print(f'{a} * {b} = {mul(a, b)}')
             elif operator == '/':
                 print(f'{a} / {b} = {div(a, b)}')
-
 
     calculate_arguments()
