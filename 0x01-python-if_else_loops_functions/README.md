@@ -6,19 +6,6 @@ This directory contains completed tasks for if/else, loops, and functions, which
 ### Task 0. Positive anything is better than negative nothing
 + This program generates a random signed number and determines whether it is positive, negative, or zero. The program assigns a different random value to the variable number each time the program is executed.
 + File: `0-positive_or_negative.py`
-+ Expected Output:
-
-`cjmatheka@Matheka-EliteOne: $ ./0-positive_or_negative.py`
-
-    -5 is negative
-
-`cjmatheka@Matheka-EliteOne: $ ./0-positive_or_negative.py`
-
-    10 is positive
-
-`cjmatheka@Matheka-EliteOne: $ ./0-positive_or_negative.py`
-
-    -7 is negative
 -----------------------------
 
 ### Task 1. The last digit
@@ -35,18 +22,6 @@ The program strictly follows the guidelines, prohibiting the storage of characte
 + This program is designed to print the lowercase ASCII alphabet, excluding the letters 'q' and 'e,' without new lines. The implementation adheres to specific constraints, including the use of only one print 
 function with string formatting, a single loop in the code, and the prohibition of storing characters in variables or importing any modules.
 + File: `4-print_hexa.py`
-+ Expected output:
-
-`/0x01-python-if_else_loops_functions$ ./4-print_hexa.py <br>`
-
-    0 = 0x0
-    1 = 0x1
-    2 = 0x2
-    ........
-    96 = 0x60
-    97 = 0x61
-    98 = 0x62
-
 --------------------------------
 
 ### Task 4. Hexadecimal printing
