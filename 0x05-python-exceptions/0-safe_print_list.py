@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
+
 def safe_print_list(my_list=[], x=0):
+    count = 0
+    for _ in my_list:
+        count += 1
+
     length = 0
     try:
         for i in range(x):
@@ -8,7 +13,7 @@ def safe_print_list(my_list=[], x=0):
             length += 1
 
     except IndexError:
-        print("Index is out of range")
+        pass
 
     print()
     return length
