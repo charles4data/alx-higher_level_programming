@@ -12,7 +12,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 pass
 
     except IndexError:
-        print("List out of range")
+        print("list index out of range")
 
     print()
     return length
