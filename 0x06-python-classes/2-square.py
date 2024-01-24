@@ -9,8 +9,10 @@ class Square:
     def __init__(self, size=0):
         """ The size attribute defines the size of a square
         Arguments: int(size)"""
-        assert size == int, "Size must be an integer"
-        assert size >= 0, "size must be >= 0"
+        if not isinstance(size, int):
+            raise TypeError("Size must be an integer")
+        if not size >= 0:
+            raise ValueError("size must be >= 0")
 
         # instantiate size
         self._size = size
