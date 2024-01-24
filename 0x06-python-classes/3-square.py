@@ -16,3 +16,7 @@ class Square:
 
         # instantiate size
         self._size = size
+
+        # define area method
+        def area(self):
+            return
