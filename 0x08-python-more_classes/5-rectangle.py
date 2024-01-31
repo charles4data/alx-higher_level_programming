@@ -92,7 +92,10 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return f""
         else:
-            return '\n'.join(['#' * self.__width] * self.__height)
+            rect = ""
+            for i in range(self.height):
+                rect += "#" * self.width + "\n"
+            return rect.rstrip()
 
     def __repr__(self):
         """
