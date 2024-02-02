@@ -1,0 +1,46 @@
+>>> from 4-print_square import print_square
+
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(8)
+########
+########
+########
+########
+########
+########
+########
+########
+
+>>> print_square(20)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(w)
+Traceback (Most recent call last)
+...
+TypeError: size must be an integer
+
+>>> print_square(-2)
+Traceback (Most recent call last)
+...
+ValueError: size must be an >= 0
+
+>>> print_square(-5.5)
+Traceback (Most recent call last)
+...
+TypeError: size must be an integer
+
+
