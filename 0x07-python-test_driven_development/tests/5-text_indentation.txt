@@ -1,0 +1,19 @@
+>>> from 5-text_indentation import text_indentation
+
+>>> text_indentation("Hello. How are you? I'm fine, thank you: and you?")
+Hello
+How are you
+
+I'm fine, thank you
+
+and you
+
+>>> text_indentation(2)
+Traceback (most recent call last):
+      ...
+TypeError: text must be a string
+
+>>> text_indentation(2.5)
+Traceback (most recent call last):
+      ...
+TypeError: text must be a string
