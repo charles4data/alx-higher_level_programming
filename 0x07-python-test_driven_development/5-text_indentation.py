@@ -19,5 +19,4 @@ def text_indentation(text):
             print(char)
             print()
 
-    if text[-1] not in new_line_chars:
-        print()
+    print()
