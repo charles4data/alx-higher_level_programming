@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
+"""
+A class that inherits and defines a method
+"""
+
+
 class MyList(list):
+    """
+    class MyList inherits from base class list.
+    After inheriting, it defines a method that prints sorted list
+    """
     def print_sorted(self):
         sorted_list = sorted(self)
         print(sorted_list)
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
