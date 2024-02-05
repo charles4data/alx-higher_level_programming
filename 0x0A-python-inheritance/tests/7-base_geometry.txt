@@ -1,0 +1,18 @@
+>>> from 7-base_geometry.py import BaseGeometry
+
+>>> base = BaseGeometry()
+
+>>> base.integer_validator("name", -45)
+Traceback (Most recent call last)
+...
+TypeError: name must be greater than 0
+
+>>> base.integer_validator("age", 0)
+Traceback (Most recent call last)
+...
+TypeError: age must be greater than 0
+
+>>> base.integer_validator("age", "35")
+Traceback (Most recent call last)
+...
+TypeError: age must be an integer
