@@ -1,4 +1,4 @@
->>> from -1-my_list import MyList
+>>> from 1-my_list import MyList
 
 >>> my_list = MyList([4, 2, 7, 1, 9])
 >>> my_list.print_sorted()
