@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 
 """
 serializes objects into json notation
