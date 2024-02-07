@@ -5,7 +5,7 @@ An BaseGeometry class
 """
 
 
-from base_geometry import BaseGeometry
+from 7-base_geometry import BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -14,6 +14,6 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    def validator(self):
+    def validate(self):
         self.integer_validator("width", self.__width)
         self.integer_validator("height", self.__height)
