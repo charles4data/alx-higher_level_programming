@@ -180,7 +180,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Assigns arguments, non-keyworded or keyworded, to the corresponding attributes
+        Assigns arguments, non-keyworded or
+        keyworded, to the corresponding attributes
         args: command line arguments
         return: returns nothing
         """
