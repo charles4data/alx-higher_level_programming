@@ -169,8 +169,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        returns the string representation of a rectangle object
+        Prints the Rectangle instance with # for x and y
+        Returns the string representation of a rectangle object
         return: Rectangle string presentation
         """
+        for _ in range(self.x):
+            print("#" * self.y)
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
                 f" - {self.width}/{self.height}")
