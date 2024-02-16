@@ -4,7 +4,7 @@
 A subclass of Base class
 """
 
-from models.base import Base
+from .base import (Base)
 
 
 class Rectangle(Base):
@@ -185,6 +185,7 @@ class Rectangle(Base):
         args: command line arguments
         return: returns nothing
         """
+
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -196,6 +197,7 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
+
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
