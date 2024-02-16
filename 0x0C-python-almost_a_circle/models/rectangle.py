@@ -164,8 +164,10 @@ class Rectangle(Base):
         Prints the area of a Rectangle object using #
         return: returns nothing, just prints
         """
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """
@@ -173,7 +175,5 @@ class Rectangle(Base):
         Returns the string representation of a rectangle object
         return: Rectangle string presentation
         """
-        for _ in range(self.x):
-            print("#" * self.y)
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
                 f" - {self.width}/{self.height}")
