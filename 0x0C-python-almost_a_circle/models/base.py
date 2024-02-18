@@ -30,7 +30,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of dictionaries from the JSON string representation."""
+        """Returns the list of dictionaries from
+        the JSON string representation."""
         if json_string is None or json_string == "":
             return []
         else:
@@ -38,7 +39,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes set using the provided dictionary."""
+        """Returns an instance with all attributes
+        set using the provided dictionary."""
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
         elif cls.__name__ == 'Square':
@@ -68,5 +70,6 @@ class Base:
 
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as file:
-            json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            json_string = cls.to_json_string([obj.to_dictionary()
+                                              for obj in list_objs])
             file.write(json_string)
