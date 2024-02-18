@@ -35,6 +35,17 @@ class TestBase(unittest.TestCase):
         result = Base.to_json_string(list_dictionaries)
         self.assertEqual(result, "[]")
 
+    def test_to_json_string_empty_list(self):
+        empty_list = []
+        json_string = Base.to_json_string(empty_list)
+        self.assertEqual(json_string, "[]")
+
+    def test_to_json_string_non_empty_list(self):
+        data = [{'id': 1, 'name': 'foo'}, {'id': 2, 'name': 'bar'}]
+        json_string = Base.to_json_string(data)
+        expected_string = '[{"id": 1, "name": "foo"}, {"id": 2, "name": "bar"}]'
+        self.assertEqual(json_string, expected_string)
+
 
 if __name__ == '__main__':
     unittest.main()
