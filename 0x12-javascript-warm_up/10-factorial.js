@@ -2,7 +2,7 @@
 
 // computing the factorial
 function factorial (num) {
-  if (isNaN(num)) {
+  if (isNaN(num) || num === undefined) {
     return 1;
   }
 
@@ -18,7 +18,7 @@ function factorial (num) {
 }
 
 // getting first argument
-const num = process.argv.slice(2);
+const num = process.argv.slice(2) !== undefined ? parseInt(process.argv[2]) : 1;
 
 // computing the factorial of a given number
 const result = factorial(num);
