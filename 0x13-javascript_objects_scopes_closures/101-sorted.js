@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-// 1. Import the dictionary (Assuming 101-data.js is in the same directory)
-const dict = require('./101-data.js').dict;
+// 1. Import the dictionary
+const dict = require('./101-data').dict;
 
 // 2. Reverse the dictionary
 const occurrencesByUser = {};
