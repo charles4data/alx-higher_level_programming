@@ -1,23 +1,21 @@
 #!/usr/bin/node
 
 // define function for searching for biggest int.
-function findMax (...numbers) {
+function findNum (...numbers) {
   if (numbers.length === 0 || numbers.length === 1) {
     return 0;
   }
-  let maxNum = numbers[0];
-  let i;
+  numbers.sort(function(a, b) {
+    return b - a;
+  });
 
-  for (i = 0; i < numbers.length; i++) {
-    if (numbers[i] > maxNum) {
-      maxNum = numbers[0];
-    }
-  }
-  return maxNum;
+  const second_biggest = numbers[1]; 
+
+  return second_biggest;
 }
 
 const list = process.argv.slice(2).map(Number);
 
-const max = findMax(...list);
+const max = findNum(...list);
 
 console.log(max);
