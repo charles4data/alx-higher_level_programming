@@ -5,13 +5,14 @@ function findNum (...numbers) {
   if (numbers.length === 0 || numbers.length === 1) {
     return 0;
   }
-  numbers.sort(function(a, b) {
+
+  numbers.sort(function (a, b) {
     return b - a;
   });
 
-  const second_biggest = numbers[1]; 
+  const myNum = numbers[1];
 
-  return second_biggest;
+  return myNum;
 }
 
 const list = process.argv.slice(2).map(Number);
