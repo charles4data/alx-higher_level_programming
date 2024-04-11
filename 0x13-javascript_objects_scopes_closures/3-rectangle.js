@@ -1,4 +1,4 @@
-#!/usr/bin/noide
+#!/usr/bin/node
 
 // defining the rectangle class
 module.exports = class Rectangle {
