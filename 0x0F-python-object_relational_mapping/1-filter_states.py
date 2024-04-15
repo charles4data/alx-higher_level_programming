@@ -14,7 +14,7 @@ if __name__ == 'main':
         port=3306)
 
     cursor = db.cursor()
-    query = 'SELECT * FROM states ORDER BY states.id ASC'
+    query = 'SELECT * FROM states WHERE name LIKE \'N%\' ORDER BY states.id ASC'
     cursor.execute(query)
     results = cursor.fetchall()
 
