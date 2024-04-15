@@ -6,13 +6,13 @@ import MySQLdb
 import sys
 
 if __name__ == 'main':
-    db = MySQLdb.connect(
+    conn = MySQLdb.connect(
         host='localhost',
         user=sys.argv[1],
         passwd=sys.argv[2],
         database=sys.argv[3],
         port=3306)
-    cursor = db.cursor()
+    cursor = conn.cursor()
     cursor.execute("""SELECT *
     FROM states
     WHERE name LIKE 'N%'
@@ -21,8 +21,7 @@ if __name__ == 'main':
     results = cursor.fetchall()
 
     for row in results:
-        # print(f'({row[0]}, \'{row[1]}\')')
         print(row)
 
     cursor.close()
-    db.close()
+    conn.close()
