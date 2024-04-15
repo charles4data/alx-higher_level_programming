@@ -4,37 +4,26 @@ import MySQLdb
 import sys
 
 if __name__ == 'main':
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
+    """ connects to and queries a database """
     # connect to database
-    try:
-        db = MySQLdb.connect(
-            host='localhost',
-            username=user,
-            password=password,
-            database=database,
-            port=3306)
-        except MySQLdb.Error as e:
-            print(f'Error connecting to database: {e}')
-            sys.exit(2)
+    db = MySQLdb.connect(
+        host='localhost',
+        user = sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306)
 
     # create a cursor object
     cursor = db.cursor
 
     # query database
     query = 'SELECT id, name FROM states ORDER BY states.id ASC'
-    try:
-        cursor.execute(query)
-        results = cursor.fetchall()
-    except MySQLdb.Error as e:
-        print(f'Error Executing query: {e}')
-        sys.exit(3)
+    cursor.execute(query)
+    results = cursor.fetchall()
 
     # display results
     for row in results:
-        print(f'{row[0]}: {row[1]}')
+        print(row)
 
     # close connection and cursor
     cursor.close()
