@@ -21,7 +21,8 @@ if __name__ == 'main':
     results = cursor.fetchall()
 
     for row in results:
-        print(f'({row[0]}, \'{row[1]}\')')
+        # print(f'({row[0]}, \'{row[1]}\')')
+        print(row)
 
     cursor.close()
     db.close()
