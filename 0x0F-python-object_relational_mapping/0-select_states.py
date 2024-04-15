@@ -1,48 +1,47 @@
 #!/usr/bin/python3
 
 """ connects, queries, and displays results from a database """
-
-# import modules
 import MySQLdb
 import sys
 
-# check arguments provided by user
-if len(sys.argv != 4):
-    sys.exit(1)
+if __name__ == 'main':
+    # check arguments provided by user
+    if len(sys.argv != 4):
+        sys.exit(1)
 
-# assign arguments to variables
-user = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+        # assign arguments to variables
+        user = sys.argv[1]
+        password = sys.argv[2]
+        database = sys.argv[3]
 
-# connect to database
-try:
-    db = MySQLdb.connect(
-        host='localhost',
-        user=username,
-        password=password,
-        database=database,
-        port=3306)
-except MySQLdb.Error as e:
-    print(f'Error connecting to database: {e}')
-    sys.exit(2)
+        # connect to database
+        try:
+            db = MySQLdb.connect(
+                host='localhost',
+                user=username,
+                password=password,
+                database=database,
+                port=3306)
+            except MySQLdb.Error as e:
+                print(f'Error connecting to database: {e}')
+                sys.exit(2)
 
-# create a cursor object
-cursor = db.cursor
+    # create a cursor object
+    cursor = db.cursor
 
-# query database
-query = 'SELECT id, name FROM states ORDER BY states.id ASC'
-try:
-    cursor.execute(query)
-    results = cursor.fetchall()
-except MySQLdb.Error as e:
-    print(f'Error Executing query: {e}')
-    sys.exit(3)
+    # query database
+    query = 'SELECT id, name FROM states ORDER BY states.id ASC'
+    try:
+        cursor.execute(query)
+        results = cursor.fetchall()
+    except MySQLdb.Error as e:
+        print(f'Error Executing query: {e}')
+        sys.exit(3)
 
-# display results
-for row in results:
-    print(f'{row[0]}: {row[1]}')
+    # display results
+    for row in results:
+        print(f'{row[0]}: {row[1]}')
 
-# close connection and cursor
-cursor.close()
-db.close()
+    # close connection and cursor
+    cursor.close()
+    db.close()
