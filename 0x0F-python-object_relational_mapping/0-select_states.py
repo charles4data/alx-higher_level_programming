@@ -7,26 +7,25 @@ import sys
 
 if __name__ == 'main':
 	"""connects, queries, and displays results from a database"""
-    # check arguments provided by user
     if len(sys.argv != 4):
         sys.exit(1)
 
-        # assign arguments to variables
-        user = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
+    # assign arguments to variables
+    user = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-        # connect to database
-        try:
-            db = MySQLdb.connect(
-                host='localhost',
-                user=username,
-                password=password,
-                database=database,
-                port=3306)
-            except MySQLdb.Error as e:
-                print(f'Error connecting to database: {e}')
-                sys.exit(2)
+    # connect to database
+    try:
+        db = MySQLdb.connect(
+            host='localhost',
+            user=username,
+            password=password,
+            database=database,
+            port=3306)
+        except MySQLdb.Error as e:
+            print(f'Error connecting to database: {e}')
+            sys.exit(2)
 
     # create a cursor object
     cursor = db.cursor
