@@ -4,10 +4,6 @@ import MySQLdb
 import sys
 
 if __name__ == 'main':
-    if len(sys.argv != 4):
-        sys.exit(1)
-
-    # assign arguments to variables
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -16,7 +12,7 @@ if __name__ == 'main':
     try:
         db = MySQLdb.connect(
             host='localhost',
-            user=username,
+            username=user,
             password=password,
             database=database,
             port=3306)
