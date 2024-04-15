@@ -20,7 +20,7 @@ if __name__ == 'main':
     results = cursor.fetchall()
 
     for row in results:
-        print(row)
+        print(f'({row[0]}, \'{row[1]}\')')
 
     cursor.close()
     db.close()
