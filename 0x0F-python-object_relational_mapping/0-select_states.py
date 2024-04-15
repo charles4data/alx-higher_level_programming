@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 
-""" connects, queries, and displays results from a database """
+""" ORM Function """
+
 import MySQLdb
 import sys
 
 if __name__ == 'main':
+	"""connects, queries, and displays results from a database"""
     # check arguments provided by user
     if len(sys.argv != 4):
         sys.exit(1)
