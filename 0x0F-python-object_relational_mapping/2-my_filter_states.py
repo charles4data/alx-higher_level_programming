@@ -20,12 +20,13 @@ if __name__ == 'main':
 
     cursor = conn.cursor()
 
-    results = cursor.execute(
-        """
+    sql_query = """
         SELECT * FROM states
-        WHERE name = state_name
+        WHERE name = %s
         ORDER BY states.id ASC
-        """).fetchall()
+        """
+
+    results = cursor.execute(sql_query, (state_name)).fetchall()
 
     for row in results:
         print(row)
