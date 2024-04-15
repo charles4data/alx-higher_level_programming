@@ -19,7 +19,8 @@ cursor = db.cursor()
 
 query = 'SELECT * FROM states ORDER BY states.id ASC'
 
-results = cursor(query)
+cursor.execute(query)
+results = cursor.fetchall()
 
 # print in this format(4, 'New York')
 for row in results:
