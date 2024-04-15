@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
-""" ORM Function """
-
+""" Lists all states from database hbtn_0e_0_usa """
 import MySQLdb
 import sys
 
 if __name__ == 'main':
-	"""connects, queries, and displays results from a database"""
     if len(sys.argv != 4):
         sys.exit(1)
 
