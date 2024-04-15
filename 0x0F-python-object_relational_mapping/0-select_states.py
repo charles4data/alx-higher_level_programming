@@ -15,7 +15,7 @@ if __name__ == 'main':
 
     cursor = db.cursor
 
-    query = 'SELECT id, name FROM states'
+    query = 'SELECT * FROM states'
     cursor.execute(query)
     results = cursor.fetchall()
 
