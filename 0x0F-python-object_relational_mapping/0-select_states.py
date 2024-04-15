@@ -13,7 +13,7 @@ if __name__ == 'main':
         db=sys.argv[3],
         port=3306)
 
-    cursor = db.cursor
+    cursor = db.cursor()
 
     query = 'SELECT * FROM states ORDER BY states.id ASC'
     cursor.execute(query)
