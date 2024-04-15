@@ -2,7 +2,7 @@
 
 """ displays records where name matches the argument given """
 
-import MySqldb
+import MySQLdb
 import sys
 
 if __name__ == 'main':
@@ -11,7 +11,7 @@ if __name__ == 'main':
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    conn = MySqldb.connect(
+    conn = MySQLdb.connect(
         host='localhost',
         user=username,
         passwd=password,
