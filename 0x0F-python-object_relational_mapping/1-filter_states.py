@@ -12,9 +12,12 @@ if __name__ == 'main':
         passwd=sys.argv[2],
         database=sys.argv[3],
         port=3306)
-
     cursor = db.cursor()
-    query = 'SELECT * FROM states WHERE name LIKE \'N%\' ORDER BY states.id ASC'
+    query = """SELECT *
+    FROM states
+    WHERE name LIKE \'N%\'
+    ORDER BY states.id ASC
+    """
     cursor.execute(query)
     results = cursor.fetchall()
 
