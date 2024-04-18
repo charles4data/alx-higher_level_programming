@@ -14,8 +14,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     sql_query = """
-    SELECT *
+    SELECT cities.id, cities.name, states.name
     FROM cities
+    INNER JOIN states ON states.id = cities.states_id
     ORDER BY cities.id ASC
     """
 
