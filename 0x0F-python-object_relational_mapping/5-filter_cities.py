@@ -16,9 +16,8 @@ if __name__ == "__main__":
     sql_query = """
     SELECT cities.name
     FROM cities
-    INNER JOIN states ON cities.states_id=states.id
-    WHERE states.name=%s, (sys.argv[4],)
-    """
+    INNER JOIN states ON states.id=cities.states_id
+    WHERE states.name=%s""", (sys.argv[4],)
 
     results = cursor.execute(sql_query).fetchall()
 
