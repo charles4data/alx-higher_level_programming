@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Displays all values in the states table """
+"""Displays all values in the states table"""
 
 import MySQLdb
 import sys
