@@ -17,8 +17,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states = session.query(State)
-    .filter(State.name.like("%a%")).order_by(State.id).all()
+    session.query(State).filter(State.name == sys.argv[4]).first()
 
     for state in states:
         print(state)
