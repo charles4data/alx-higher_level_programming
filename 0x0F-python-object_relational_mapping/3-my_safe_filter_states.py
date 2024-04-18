@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Displays all values in the states table
+displays all values in the states table
 without sql injection
 """
 
