@@ -1,34 +1,31 @@
-#!/usr/bin/python3
+#!usr/bin/python3
 
-""" displays records where name matches the argument given """
+""" Displays all values in the states table """
 
 import MySQLdb
 import sys
 
-if __name__ == 'main':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
-
-    conn = MySQLdb.connect(
-        host='localhost',
-        user=username,
-        passwd=password,
-        db=database,
+if __main__ == '__name__':
+    db = MySQLdb.connect(
+        host='locahost',
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        database=sys.argv[3],
         port=3306)
 
-    cursor = conn.cursor() 
+    cursor = db.cursor()
 
-    results = cursor.execute(
-        """
-        SELECT *
-        FROM states
-        WHERE name=%s
-        ORDER BY id ASC""", (state_name,).fetchall()
+    sql_query = """
+    SELECT *
+    FROM states
+    WHERE name = {}
+    ORDER BY states.id
+    """, format(sys.argv[4])
+
+    results = cursor.execute(sql_query)
 
     for row in results:
         print(row)
 
     cursor.close()
-    conn.close()
+    db.close()
