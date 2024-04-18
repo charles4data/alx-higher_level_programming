@@ -17,7 +17,8 @@ if __name__ == "__main__":
         SELECT cities.name
         FROM cities
         INNER JOIN states ON states.id=cities.states_id
-        WHERE states.name=%s"""
+        WHERE states.name=%s
+        """
 
     cursor.execute(sql_query, (sys.argv[4],))
 
