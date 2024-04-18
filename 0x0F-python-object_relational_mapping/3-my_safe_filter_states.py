@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
 """ displays all values in the states table without sql injection """
-
 import MySQLdb
 import sys
 
@@ -18,9 +16,9 @@ if __main__ == '__name__':
     sql_query = """
     SELECT *
     FROM states
-    WHERE name = {}
+    WHERE name LIKE %s
     ORDER BY states.id
-    """, format(sys.argv[4])
+    """, (sys.argv[4])
 
     results = cursor.execute(sql_query)
 
