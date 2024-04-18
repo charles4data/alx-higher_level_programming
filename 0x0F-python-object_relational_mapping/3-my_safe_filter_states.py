@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-"""Displays all values in the states table"""
+"""
+Displays all values in the states table
+without sql injection
+"""
 
 import MySQLdb
 import sys
