@@ -22,10 +22,10 @@ if __name__ == 'main':
 
     results = cursor.execute(
         """
-        SELECT * FROM states
-        WHERE name = {}
-        ORDER BY states.id ASC
-        """.format(state_name)).fetchall()
+        SELECT *
+        FROM states
+        WHERE name=%s
+        ORDER BY id ASC""", (state_name,).fetchall()
 
     for row in results:
         print(row)
