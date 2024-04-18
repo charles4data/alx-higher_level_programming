@@ -14,10 +14,10 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     sql_query = """
-    SELECT cities.name
-    FROM cities
-    INNER JOIN states ON states.id=cities.states_id
-    WHERE states.name=%s""", (sys.argv[4],)
+        SELECT cities.name
+        FROM cities
+        INNER JOIN states ON states.id=cities.states_id
+        WHERE states.name=%s""", (sys.argv[4],)
 
     results = cursor.execute(sql_query).fetchall()
 
