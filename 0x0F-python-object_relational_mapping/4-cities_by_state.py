@@ -13,14 +13,12 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    sql_query = """
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    INNER JOIN states ON states.id = cities.states_id
-    ORDER BY cities.id ASC
-    """
-
-    cursor.execute(sql_query)
+    cursor.execute("""
+                    SELECT cities.id, cities.name, states.name
+                    FROM cities
+                    INNER JOIN states ON states.id = cities.states_id
+                    ORDER BY cities.id ASC
+    	""")
 
     results = cursor.fetchall()
 
