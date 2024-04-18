@@ -20,7 +20,7 @@ if __name__ == "__main__":
     ORDER BY cities.id ASC
     """
 
-    results = cursor.execute(sql_query)
+    results = cursor.execute(sql_query).fetchall()
 
     for row in results:
         print(row)
