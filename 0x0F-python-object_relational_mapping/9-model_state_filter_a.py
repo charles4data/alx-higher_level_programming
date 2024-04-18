@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" list ths first state in a database """
+""" lists states with letter 'a' from database """
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -11,14 +11,14 @@ if __name__ == "__main__":
     db = sys.argv[3]
 
     engine = create_engine(
-        f'mysql://{user}:{passwd}@localhost:3306/{db}')
+        f"mysql://{user}:{passwd}@localhost:3306/{db}")
 
     Session = sessionmaker(bind=engine)
 
     session = Session()
 
     states = session.query(State)
-    .filter(State.name.like('%a%')).order_by(State.id).all()
+    .filter(State.name.like("%a%")).order_by(State.id).all()
 
     for state in states:
         print(state)
