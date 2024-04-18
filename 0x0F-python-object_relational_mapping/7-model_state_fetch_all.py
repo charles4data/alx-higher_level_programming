@@ -6,8 +6,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    engine = create_engine('mysql://{}:{}@localhost:3306/{}'
-        	               .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
+
+    engine = create_engine(
+        f'mysql://{user}:{passwd}@localhost:3306/{db}')
 
     Session = sessionmaker(bind=engine)
 
