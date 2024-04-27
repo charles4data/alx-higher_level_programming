@@ -4,7 +4,6 @@
 import urllib.request
 import sys
 
-
 url = sys.argv[1]
 
 request = urllib.request.Request(url)
