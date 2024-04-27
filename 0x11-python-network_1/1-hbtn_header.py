@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""
-The script takes a url and sends a request
-Displays the value of the X-Request-Id variable.
+
+""" A Script that does the following:
+ - Takes a url as argument
+ - Sends a request to the url
+ - Displays the value of the X-Request-Id variable.
 """
 
 import urllib.request
