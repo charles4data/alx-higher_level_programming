@@ -10,7 +10,7 @@ if __name__ == '__main__':
     import sys
 
     url = 'https://api.github.com/user'
-    auth = HTTPBasicAuth(sys.argv[1], sys.ergv[2])
+    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
 
     response = requests.get(url, auth=auth)
     user_data = response.json()
