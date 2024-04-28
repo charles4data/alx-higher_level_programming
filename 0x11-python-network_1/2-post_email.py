@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-"""A Script that does the following:
- - Takes a url and email as arguments
- - Sends a request to the url using email as parameter
- - displays the body of the response (decoded in utf-8).
-"""
+"""A Script that does the following"""
+
 
 import urllib.request
 import sys
