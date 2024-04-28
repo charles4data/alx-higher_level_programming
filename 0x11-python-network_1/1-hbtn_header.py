@@ -6,13 +6,13 @@
  - Displays the value of the X-Request-Id variable.
 """
 
+if __name__ == "__main__":
+    import urllib.request
+    import sys
 
-import urllib.request
-import sys
+    url = sys.argv[1]
 
-url = sys.argv[1]
-
-request = urllib.request.Request(url)
-with urllib.request.urlopen(request) as response:
-    headers = dict(response.getheaders())
-    print(headers.get("X-Request-Id"))
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
+        headers = dict(response.getheaders())
+        print(headers.get("X-Request-Id"))

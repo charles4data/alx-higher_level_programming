@@ -6,13 +6,13 @@
  - displays the body of the response (decoded in utf-8).
 """
 
+if __name__ == "__main__":
+    import urllib.request
+    import sys
 
-import urllib.request
-import sys
+    url = sys.argv[1]
+    params = {"email": sys.argv[2]}
 
-url = sys.argv[1]
-params = {"email": sys.argv[2]}
-
-request = urllib.request.Request(url, params)
-with urllib.request.urlopen(request) as response:
-    print(response.read().decode("utf-8"))
+    request = urllib.request.Request(url, params)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().decode("utf-8"))
