@@ -12,6 +12,7 @@ import sys
 
 url = sys.argv[1]
 
+# handling the request
 request = urllib.request.Request(url)
 with urllib.request.urlopen(request) as response:
     headers = dict(response.getheaders())
