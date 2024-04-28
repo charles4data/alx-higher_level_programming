@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 A Script that does the following:
  - Takes a url and email as arguments
@@ -6,7 +7,6 @@ A Script that does the following:
  - displays the body of the response (decoded in utf-8).
 """
 
-import urllib.parse
 import urllib.request
 import sys
 
