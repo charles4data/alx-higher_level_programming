@@ -1,29 +1,37 @@
 #!/usr/bin/node
 
-// Importing the Request Module
+// Import the request module
 const request = require('request');
 
-// Assign URL to variable
-const API_URL = process.argv[2];
+if (process.argv.length < 3) {
+  console.error("Error: Please provide the Star Wars API URL as an argument.");
+  process.exit(1);
+}
 
-// prints the number of movies where the character
-// “Wedge Antilles” is present.
-request(API_URL, function (err, response, body) {
-  if (err) {
-    console.log(err);
-  } else if (response.statusCode === 200) {
-    const movies = JSON.parse(body).results;
-    let count = 0;
-    for (const movieIndex in movies) {
-      const movieCharachers = movies[movieIndex].characters;
-      for (const characterIndex in movieCharacters) {
-        if (movieCharacters[characterIndex].includes('18')) {
-          count++;
-        }
-      }
-    }
-    console.log(count);
-  } else {
-    console.log('An error occured. Status code: ' + response.statusCode);
+// Get the API URL from the command line argument
+const apiUrl = process.argv[2]; 
+const characterId = 18;
+
+// Fetch film data from the API
+request(apiUrl, (error, response, body) => {
+  if (error) {
+    console.error('Error fetching data:', error);
+    return;
+  }
+
+  // Parse the JSON response
+  try {
+    const films = JSON.parse(body).results; 
+
+    // Filter for films with Wedge Antilles
+    const filmsWithWedge = films.filter(film => {
+      return film.characters.includes(apiUrl + "people/" + characterId);
+    });
+
+    // Print the count
+    console.log(filmsWithWedge.length); 
+
+  } catch (jsonError) {
+    console.error('Error parsing JSON:', jsonError);
   }
 });
