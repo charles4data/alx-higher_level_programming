@@ -5,10 +5,10 @@ const request = require('request');
 
 // Get episode number
 const movieid = process.argv[2];
-const API_Endpoint = 'https://swapi-api.hbtn.io/api/films/';
+const API_URL = 'https://swapi-api.hbtn.io/api/films/';
 
 // Prints the title of starwars movie
-request(API_Endpoint + movieid, function (err, response, body) {
+request(API_URL + movieid, function (err, response, body) {
   if (err) {
     console.log(err);
   } else if (response.statusCode === 200) {
