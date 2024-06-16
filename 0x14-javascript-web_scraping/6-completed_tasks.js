@@ -5,7 +5,7 @@ const request = require('request');
 
 // Checks number of arguments
 if (process.argv.length < 3) {
-  console.error("Error: Please provide the API URL as an argument.");
+  console.error('Error: Please provide the API URL as an argument.');
   process.exit(1);
 }
 
