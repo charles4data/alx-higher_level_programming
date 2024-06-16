@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-// Imports the Request Module
-const request = require('request'); 
+// Import the Request Module
+const request = require('request');
 
 // Checks number of arguments
 if (process.argv.length < 3) {
@@ -9,35 +9,28 @@ if (process.argv.length < 3) {
   process.exit(1);
 }
 
-// Assigns URL to variable
-const apiUrl = process.argv[2];
+// Assign URL to Variable
+const url = process.argv[2];
 
 // Computes the number of tasks completed by user id
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error fetching data:', error);
-    return;
-  }
-
-  try {
-    const todos = JSON.parse(body);
-
-    const completedTasksByUser = {};
-
-    // Iterate through each task and count completed tasks per user
-    for (const todo of todos) {
-      if (todo.completed) {
-        const userId = todo.userId;
-        completedTasksByUser[userId] = (completedTasksByUser[userId] || 0) + 1;
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const completed = {};
+    const tasks = JSON.parse(body);
+    for (const i in tasks) {
+      const task = tasks[i];
+      if (task.completed === true) {
+        if (completed[task.userId] === undefined) {
+          completed[task.userId] = 1;
+        } else {
+          completed[task.userId]++;
+        }
       }
     }
-
-    // Print user IDs with completed tasks
-    for (const userId in completedTasksByUser) {
-      console.log(`User ID ${userId}: ${completedTasksByUser[userId]} completed tasks`);
-    }
-
-  } catch (jsonError) {
-    console.error('Error parsing JSON:', jsonError);
+    console.log(completed);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
